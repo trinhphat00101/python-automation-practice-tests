@@ -1,0 +1,5 @@
+{
+    "timeouts.pageLoad": 5000,
+    "timeouts.implicit": 5000,
+    "max_windows_size": "True"
+}
