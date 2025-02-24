@@ -2,7 +2,7 @@ import json
 import os
 
 import pytest
-from python_automation_practice_ui.web_driver.web_driver import WebDriver
+from python_practice_automation_test_lib.web_driver.web_driver import WebDriver
 
 
 @pytest.fixture(scope="session")
@@ -27,6 +27,18 @@ def read_driver_options(browser_name):
     current_directory = os.path.abspath(os.path.curdir)
     if browser_name == "chrome":
         json_file_path = os.path.join(current_directory, "tests\\chrome_options.json")
+        with open(json_file_path, 'r') as file:
+            string_json = file.read()
+            data = json.loads(string_json)
+            return data
+    elif browser_name == "firefox":
+        json_file_path = os.path.join(current_directory, "tests\\firefox_options.json")
+        with open(json_file_path, 'r') as file:
+            string_json = file.read()
+            data = json.loads(string_json)
+            return data
+    elif browser_name == "edge":
+        json_file_path = os.path.join(current_directory, "tests\\edge_options.json")
         with open(json_file_path, 'r') as file:
             string_json = file.read()
             data = json.loads(string_json)
