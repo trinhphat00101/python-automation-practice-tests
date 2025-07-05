@@ -93,3 +93,5 @@ tags
 ###
 #########
 docs/modules.rst
+# logs folder
+logs/
